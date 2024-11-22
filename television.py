@@ -25,21 +25,29 @@ class Television:
         else:
             set_status(False)
             get_status()
+
     def mute(self):
-        def get_status():
+        def get_mute():
             return self.__muted
 
-        def set_status(sound):
+        def set_mute(sound):
             self.__muted = sound
 
-        if not get_status():
-            set_status(True)
-            get_status()
+        if not get_mute():
+            set_mute(True)
+            get_mute()
         else:
-            set_status(False)
-            get_status()
+            set_mute(False)
+            get_mute()
+
     def channel_up(self):
-        pass
+        def set_channel(num):
+            self.__channel = num
+        if self.__channel >= Television.MIN_CHANNEL or self.__channel <= Television.MAX_CHANNEL:
+            set_channel(self.__channel + 1)
+            if self.__channel > Television.MAX_CHANNEL:
+                set_channel(Television.MIN_CHANNEL)
+
     def channel_down(self):
         pass
     def volume_up(self):
@@ -48,3 +56,13 @@ class Television:
         pass
     def __str__(self):
         return f'power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume}'
+
+tv_1 = Television()
+tv_1.channel_up()
+print(tv_1)
+tv_1.channel_up()
+print(tv_1)
+tv_1.channel_up()
+print(tv_1)
+tv_1.channel_up()
+print(tv_1)
