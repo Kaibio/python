@@ -59,9 +59,23 @@ class Television:
                 if self.__channel < Television.MIN_CHANNEL:
                     set_channel(Television.MAX_CHANNEL)
     def volume_up(self):
-        pass
+        def set_volume(num):
+            self.__volume = num
+
+        if self.__status:
+            if self.__volume >= Television.MIN_VOLUME or self.__volume <= Television.MAX_VOLUME:
+                set_volume(self.__volume + 1)
+                if self.__volume > Television.MAX_VOLUME:
+                    set_volume(Television.MAX_VOLUME)
     def volume_down(self):
-        pass
+        def set_volume(num):
+            self.__volume = num
+
+        if self.__status:
+            if self.__volume >= Television.MIN_VOLUME or self.__volume <= Television.MAX_VOLUME:
+                set_volume(self.__volume - 1)
+                if self.__volume < Television.MIN_VOLUME:
+                    set_volume(Television.MIN_VOLUME)
+
     def __str__(self):
         return f'power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume}'
-
