@@ -14,8 +14,15 @@ class Television:
        self.__channel = Television.MIN_CHANNEL
 
     def power(self):
-        
-        pass
+        def get_status():
+            return self.__status
+        def set_status(power):
+            self.__status = power
+
+        if not get_status():
+            set_status(True)
+        else:
+            set_status(False)
     def mute(self):
         pass
     def channel_up(self):
