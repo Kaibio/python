@@ -26,7 +26,18 @@ class Television:
             set_status(False)
             get_status()
     def mute(self):
-        pass
+        def get_status():
+            return self.__muted
+
+        def set_status(sound):
+            self.__muted = sound
+
+        if not get_status():
+            set_status(True)
+            get_status()
+        else:
+            set_status(False)
+            get_status()
     def channel_up(self):
         pass
     def channel_down(self):
