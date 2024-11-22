@@ -21,8 +21,10 @@ class Television:
 
         if not get_status():
             set_status(True)
+            get_status()
         else:
             set_status(False)
+            get_status()
     def mute(self):
         pass
     def channel_up(self):
@@ -34,4 +36,4 @@ class Television:
     def volume_down(self):
         pass
     def __str__(self):
-        pass
+        return f'power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume}'
