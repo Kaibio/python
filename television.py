@@ -43,13 +43,21 @@ class Television:
     def channel_up(self):
         def set_channel(num):
             self.__channel = num
-        if self.__channel >= Television.MIN_CHANNEL or self.__channel <= Television.MAX_CHANNEL:
-            set_channel(self.__channel + 1)
-            if self.__channel > Television.MAX_CHANNEL:
-                set_channel(Television.MIN_CHANNEL)
+        if self.__status:
+            if self.__channel >= Television.MIN_CHANNEL or self.__channel <= Television.MAX_CHANNEL:
+                set_channel(self.__channel + 1)
+                if self.__channel > Television.MAX_CHANNEL:
+                    set_channel(Television.MIN_CHANNEL)
 
     def channel_down(self):
-        pass
+        def set_channel(num):
+            self.__channel = num
+
+        if self.__status:
+            if self.__channel >= Television.MIN_CHANNEL or self.__channel <= Television.MAX_CHANNEL:
+                set_channel(self.__channel - 1)
+                if self.__channel < Television.MIN_CHANNEL:
+                    set_channel(Television.MAX_CHANNEL)
     def volume_up(self):
         pass
     def volume_down(self):
@@ -57,12 +65,3 @@ class Television:
     def __str__(self):
         return f'power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume}'
 
-tv_1 = Television()
-tv_1.channel_up()
-print(tv_1)
-tv_1.channel_up()
-print(tv_1)
-tv_1.channel_up()
-print(tv_1)
-tv_1.channel_up()
-print(tv_1)
