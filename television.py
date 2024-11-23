@@ -91,7 +91,7 @@ class Television:
         """
         def set_channel(num):
             """
-            Pulls the intial value
+            Pulls the initial value
             """
             self.__channel = num
         if self.__status:
@@ -113,7 +113,7 @@ class Television:
         """
         def set_channel(num):
             """
-            Pulls the intial channel
+            Pulls the initial channel
             """
             self.__channel = num
 
@@ -143,7 +143,7 @@ class Television:
         """
         def set_volume(num):
             """
-            Pulls intial volume
+            Pulls initial volume
             """
             self.__volume = num
 
@@ -171,7 +171,7 @@ class Television:
         """
         def set_volume(num):
             """
-            Pulls intial volume
+            Pulls initial volume
             """
             self.__volume = num
 
